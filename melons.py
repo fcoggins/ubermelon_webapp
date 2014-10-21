@@ -67,7 +67,10 @@ def add_to_cart(id):
     else:
         session["cart"] = {id: 1}
 
-    #print session
+    melon=model.get_melon_by_id(id)
+    print melon.common_name
+    message = 'You have added a ' + melon.common_name + ' to your cart.'
+    flash(message)
     return redirect("/cart")
 
 @app.route("/sessionclear")

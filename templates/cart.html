@@ -6,8 +6,9 @@
     <tr>
         <td>{{melon['name']}}</td>
         <td>{{melon['quantity']}}</td>
-        <td>{{melon['price']}}</td>
-        <td>{{melon['price'] * melon['quantity']}}</td>
+        <td>{{ '$%5.2f' %melon['price']}}</td>
+       <!--  <td>{{melon['price']}}</td> -->
+        <td>{{ '$%5.2f' %(melon['price'] * melon['quantity'])}}</td>
     </tr>
     {% endfor %}
     
